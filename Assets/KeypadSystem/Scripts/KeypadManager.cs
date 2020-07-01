@@ -134,7 +134,7 @@ public class KeypadManager : MonoBehaviour
 
     public void Erase() { try { input.text = input.text.Substring(0, input.text.Length - 1); } catch (System.Exception) {  } }
 
-    public Keypad RayCastMouseClickGetObject(Camera camera, float distance = 20f)
+    public Keypad RayCastMouseClickGetObject(Camera camera, float distance = 1.5f)
     {
         Keypad keypad = null;
         RaycastHit HitInfo;
