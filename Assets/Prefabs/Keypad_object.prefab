@@ -120,29 +120,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keycodeSolved: 0
+  permanentlyLocked: 0
   activateByMouseclick: 0
   keycode: 55555
   autoComplete: 1
   limitTries: 0
   triesAmount: 5
-  colors:
-  - {r: 0.1401745, g: 0.6603774, b: 0.1783226, a: 1}
-  - {r: 0.8490566, g: 0.1870883, b: 0.1321645, a: 1}
-  - {r: 0.1960784, g: 0.1960784, b: 0.1960784, a: 1}
   accessGranted:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: OpenDoor
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   accessDenied:
     m_PersistentCalls:
       m_Calls: []

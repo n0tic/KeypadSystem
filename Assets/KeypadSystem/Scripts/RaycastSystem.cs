@@ -1,5 +1,4 @@
-﻿using NaughtyAttributes;
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,8 +11,6 @@ using UnityStandardAssets.Characters.FirstPerson;
 [RequireComponent(typeof(Camera))]
 public class RaycastSystem : MonoBehaviour
 {
-    [InfoBox("This \"RaycastSystem\" will raycast from the camera untill it hits an object with the component \"Keypad\" attached.", EInfoBoxType.Normal)]
-
     [Header("Setup")]
     [Tooltip("Add a key for keypad interaction. Default: Left Mouse Click")]
     [SerializeField] KeyCode interactKey= KeyCode.Mouse0;

@@ -5,8 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.Characters.FirstPerson;
 
-public class KeypadExtra : MonoBehaviour
-{
+public class KeypadExtra : MonoBehaviour {
     [SerializeField] GameObject door;
     [SerializeField] FirstPersonController character;
     [SerializeField] Light deniedIndicator;

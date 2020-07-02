@@ -1,9 +1,11 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
+[RequireComponent(typeof(Collider))]
 public class Keypad : MonoBehaviour
 {
     [Header("States")]
@@ -28,6 +30,8 @@ public class Keypad : MonoBehaviour
     public UnityEvent accessGranted;
     public UnityEvent accessDenied;
     public UnityEvent returnControl;
+
+    void Awake() { if (keycodeSolved) GrantAccess(); else if (permanentlyLocked) DenyAccess(); }
 
     public void GrantAccess() {
         accessGranted?.Invoke();
