@@ -1,5 +1,5 @@
 # KeypadSystem
-A simple keypad system I made for Unity. I built the system for multiple types of usages since I want to be able to use this system again if needed.
+A simple keypad system I made for Unity. I built the system for multiple types of usages.   
 This system can be used pretty easily with these type of games:
 - FPS type game.
 - Mouse click type game   
