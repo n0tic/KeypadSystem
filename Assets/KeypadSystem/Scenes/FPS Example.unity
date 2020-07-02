@@ -2563,7 +2563,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59fd6f70bd96aea4eb16fa2793a88f46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keycodeSolved: 1
+  keycodeSolved: 0
   permanentlyLocked: 0
   activateByMouseclick: 0
   keycode: 5555
