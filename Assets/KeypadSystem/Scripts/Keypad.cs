@@ -6,8 +6,10 @@ using UnityEngine.EventSystems;
 
 public class Keypad : MonoBehaviour
 {
+    [Header("States")]
     [Tooltip("Set keypad to solved or not solved.")]
     public bool keycodeSolved = false;
+    public bool permanentlyLocked = false;
 
     [Header("Keypad Setup:")]
     [Tooltip("Should this be activated on mouse click event?")]
@@ -22,9 +24,6 @@ public class Keypad : MonoBehaviour
     public bool limitTries = false;
     public int triesAmount = 5;
 
-    [Header("Text colors:")]
-    public List<Color> colors = new List<Color> { new Color(0.1401745f, 0.6603774f, 0.1783226f, 1), new Color(0.8490566f, 0.1870883f, 0.1321645f, 1), new Color(0.1960784f, 0.1960784f, 0.1960784f, 1) };
-
     [Header("Methods to run:")]
     public UnityEvent accessGranted;
     public UnityEvent accessDenied;
@@ -34,19 +33,17 @@ public class Keypad : MonoBehaviour
         accessGranted?.Invoke();
         returnControl?.Invoke();
     }
-    public void GrantDenied() {
+    public void DenyAccess() {
         accessDenied?.Invoke();
         returnControl?.Invoke();
     }
     public void ReturnControl() => returnControl?.Invoke();
 
-    private void OnMouseDown()
-    {
-        if(activateByMouseclick)
-        {
-            //Make sure we dont interact with it through UI objects.
-            if (!KeypadManager.instance.IsPointerOverUI())
-                KeypadManager.instance.ShowKeypad(this);
+    private void OnMouseDown() {
+        if(activateByMouseclick) {
+            if (!KeypadManager.instance.IsPointerOverUI())//Make sure we dont interact with it through UI objects.
+                if(!permanentlyLocked)
+                    KeypadManager.instance.ShowKeypad(this);
         }
     }
 }
