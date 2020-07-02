@@ -10,10 +10,12 @@ public class KeypadExtra : MonoBehaviour
     [SerializeField] GameObject door;
     [SerializeField] FirstPersonController character;
     [SerializeField] Light deniedIndicator;
+    [SerializeField] Light accessGrantedIndicator;
 
     public void OpenDoor() {
         door.GetComponent<Animator>().enabled = true;
         door.GetComponent<AudioSource>().Play();
+        accessGrantedIndicator.enabled = true;
     }
 
     public void DisableControl() {
