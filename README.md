@@ -9,11 +9,9 @@ This system can be used pretty easily with these type of games:
 ## The Inspector UI (RaycastSystem is for FPS only)
 
 ![](http://bytevaultstudio.se/ShareX/Unity_C6ntis32on.png)
-![](http://bytevaultstudio.se/ShareX/Unity_Hf4axFABS3.png)
 
 ## How to setup the Keypad
 You add the script Keypad to an object (Interactions are done with the collider component).
-You then go through the options of the inspector UI.
 ### States
 states will cover two bool states.
 - Keycode Solved: This is the state if the code has been accepted or the door is open.
@@ -31,6 +29,15 @@ Keypad Extra contains the features to limit the tries on the keypad.
 Methods to run is exactly what It sounds like. The setups for these are exactly like setting up the UI events for example, buttons.
 - Access Granted: This method will be activated once the correct keycode has been entered. This method is also ends by invoking Return Control method.
 - Access Denied: This method will be activated once the incorect keycode has been entered above the limited amount. This method is also ends by invoking Return Control method.
-- Return Control: This method acts more like a free method. I, for example, used it to return control to the player once the keypad was closed. I modified the old FPSController in my demoscene and made two methods. One for disabling the controller and I needed the controller to be turned back on AFTER the keypad had been closed. 
+- Return Control: This method acts more like a free method. I, for example, used it to return control to the player once the keypad was closed. I modified the old FirstPersonController in my demoscene and made two methods. One for disabling the controller and I needed the controller to be turned back on AFTER the keypad had been closed. 
 
-## What code do I need to write?
+## What code did I have to write to get this demo scene working?
+I made 1 script (KeypadExtra.cs) outside of this system and modified the Standard Assets FirstPersonController. KeypadExtra.cs contains 4 public void methods and 4 [SerializeField] fields.
+- The method "OpenDoor" contains the door animation, sound effect and the light indicator. (Just for show) (Set in Keypad)
+- The method "DisableControl" enables the mouse cursor and disables the FirstPersonController component. (Set in RaycastSystem)
+- The method "EnableControl" disables the mouse cursor and enables the FirstPersonController component. (Set in RaycastSystem)
+- The method "DeniedAccess" does only one thing in this case. It turns the red light indicator ON. (Set in Keypad)
+
+I then set these methods by draging the parent object to the method and set it up in the inspector. No need to write a lot of code.
+
+![](http://bytevaultstudio.se/ShareX/Unity_Hf4axFABS3.png)
