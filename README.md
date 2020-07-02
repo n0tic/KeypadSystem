@@ -41,3 +41,31 @@ I made 1 script (KeypadExtra.cs) outside of this system and modified the Standar
 I then set these methods by draging the parent object to the method and set it up in the inspector. No need to write a lot of code.
 
 ![](http://bytevaultstudio.se/ShareX/Unity_Hf4axFABS3.png)
+
+### KeypadExtra.cs Source
+```
+public class KeypadExtra : MonoBehaviour {
+    [SerializeField] GameObject door;
+    [SerializeField] FirstPersonController character;
+    [SerializeField] Light deniedIndicator;
+    [SerializeField] Light accessGrantedIndicator;
+
+    public void OpenDoor() {
+        door.GetComponent<Animator>().enabled = true;
+        door.GetComponent<AudioSource>().Play();
+        accessGrantedIndicator.enabled = true;
+    }
+
+    public void DisableControl() {
+        character.m_MouseLook.SetCursorLock(false);
+        character.enabled = false;
+    }
+
+    public void EnableControl() {
+        character.m_MouseLook.SetCursorLock(true);
+        character.enabled = true;
+    }
+
+    public void DeniedAccess() => deniedIndicator.enabled = true;
+}
+```
