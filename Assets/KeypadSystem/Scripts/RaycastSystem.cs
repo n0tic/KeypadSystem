@@ -6,7 +6,6 @@ using System.Runtime.CompilerServices;
 using Unity.Collections;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityStandardAssets.Characters.FirstPerson;
 
 [RequireComponent(typeof(Camera))]
 public class RaycastSystem : MonoBehaviour
