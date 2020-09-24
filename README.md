@@ -4,6 +4,8 @@ This system can be used pretty easily with these type of games:
 - FPS type game.
 - Mouse click type game   
 
+Note: It's far from perfect but I usually build smaller features which I can then integrate into another project and improve upon them then.
+
 ![](http://bytevaultstudio.se/ShareX/ezgif.com-optimize.gif)
 
 ## The Inspector UI (RaycastSystem is for FPS only)
